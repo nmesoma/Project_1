@@ -67,6 +67,10 @@ class SongsController < ApplicationController
     def set_song
       @song = Song.find(params[:id])
     end
+# ADDED BY ME 
+def song_params
+  params.require(:song).permit(:name, :image,:remote_song_image_url)
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params

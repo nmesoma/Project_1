@@ -1,23 +1,23 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<p>
+  <b>Image:</b>
+  <%= link_to image_tag(@song.image.thumb.url), @song.image.url %>
+</p>
 
 <p>
   <strong>Title:</strong>
   <%= @song.title %>
 </p>
-<p>
-   <b>Image:</b>
-   <%= image_tag @song.image %>
- </p>
 
 <p>
   <strong>Song file:</strong>
   <%= @song.file %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Song image:</strong>
   <%= @song.image %>
-</p>
+</p> -->
 
 <p>
   <strong>Description:</strong>
