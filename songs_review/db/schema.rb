@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 20150413115724) do
 
   create_table "songs", force: :cascade do |t|
     t.string   "title"
-    t.text     "song_url"
+    t.text     "file"
+    t.text     "image"
     t.text     "description"
     t.date     "release_date"
     t.string   "rating"

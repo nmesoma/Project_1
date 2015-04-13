@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Song url</th>
+      <th>Song</th>
       <th>Description</th>
       <th>Release date</th>
       <th>Rating</th>
@@ -15,11 +15,22 @@
     </tr>
   </thead>
 
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.title %></td>
+      <td><%= image_tag song.image %></td>
+      <td><%= link_to 'Show', song %></td>
+      <td><%= link_to 'Edit', edit_song_path(song) %></td>
+      <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+
   <tbody>
     <% @songs.each do |song| %>
       <tr>
         <td><%= song.title %></td>
-        <td><%= song.song_url %></td>
+        <td><%= song.file %></td>
+        <td><%= song.image %></td>
         <td><%= song.description %></td>
         <td><%= song.release_date %></td>
         <td><%= song.rating %></td>
@@ -35,3 +46,5 @@
 <br>
 
 <%= link_to 'New Song', new_song_path %>
+
+
