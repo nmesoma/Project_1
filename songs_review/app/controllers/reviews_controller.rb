@@ -68,6 +68,10 @@ class ReviewsController < ApplicationController
     def set_review
       @review = Review.find(params[:id])
     end
+    def set_song
+      @song = Song.find(params[:song_id])
+
+    end 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params

@@ -11,7 +11,10 @@
 
 <p>
   <strong>Song file:</strong>
-  <%= @song.file %>
+  
+  <audio controls>
+    <source src="<%= @song.file.url %>" type="audio/ogg">
+  </audio>
 </p>
 
 <!-- <p>

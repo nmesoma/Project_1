@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :reviews
+  
   devise_for :users
-  resources :songs
+  resources :songs do
+    #  review will be nested under song do rake root in treminal
+    resources :reviews,  except:[:show, :index]
+  end
   root 'songs#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
