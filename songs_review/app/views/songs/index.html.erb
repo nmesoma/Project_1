@@ -18,7 +18,7 @@
 
   <% @songs.each do |song| %>
     <tr>
-      <td><%= image_tag song.image %></td>
+      <td><a><%= image_tag song.image, songs_path %></a></td>
       <td><%= song.title %></td>
       <td><%= link_to 'Show', song %></td>
       <td><%= link_to 'Edit', edit_song_path(song) %></td>

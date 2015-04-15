@@ -16,4 +16,9 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+  setInterval(function() {
+    $('#slider .slide').animate({'margin-left':'-=720px'},1000);
+
+  },3000);
+  });
