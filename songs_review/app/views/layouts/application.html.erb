@@ -18,11 +18,12 @@
       <h1 class="text_muted"></h1>
     </div>
     <ul id="menu">
-      <li>Reviews</li>
-      <li>Artists</li>
-      <li>Review a Song</li>
-      <li>Sign up</li>
-      <li>Log in</li> 
+      <li><%= link_to "Reviews"%></li>
+      <li><%= link_to "Artists"%></li>
+      <li><%= link_to "Review a Song"%></li>
+      <li><%= link_to "Sign up", new_user_registration_path%></li>
+      <li><%= link_to "Log in", new_user_session_path%></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
     </ul>
     <ul class="example-orbit" data-orbit>
       <li>
