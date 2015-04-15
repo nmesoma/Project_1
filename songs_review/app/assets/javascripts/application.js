@@ -13,12 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require_tree .
 
 $(function(){ 
-  setInterval(function() {
-    $('#slider .slide').animate({'margin-left':'-=720px'},1000);
+  $(document).foundation();
 
-  },3000);
-  });
+// $(function(){ 
+//   $(document).foundation({
+//   orbit: {
+//     animation: 'slide',
+//     timer_speed: 1000,
+//     pause_on_hover: true,
+//     animation_speed: 500,
+//     navigation_arrows: true,
+//     bullets: false
+//   }
+// }); 
+});
