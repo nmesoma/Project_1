@@ -39,6 +39,17 @@
       <tr>
         <td><%= link_to"Write a Review", new_song_review_path(@song) %><td> 
       </tr>
+      <div class="row">
+   <tr>
+
+      <% if @song.blank? %>
+      <td><h3> No reviews just yet, Be the first to a review </h3></td>
+     <% end %>
+
+      <% @song.reviews.each do |review|%>
+        <tr><td><%= review.rating %></td></tr>
+        <tr><td><%= review.comment %></td></tr>
+      <% end %>
       <tr>
         <td><%= link_to 'Edit', edit_song_path(@song) %><td> 
         <td><%= link_to 'Back', songs_path %></td>
