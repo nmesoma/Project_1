@@ -3,6 +3,7 @@
   <b>Image:</b>
   <%= link_to image_tag(@song.image.thumb.url), @song.image.url %>
 </p>
+
 <div class="table-responsive">
   <table class="table">
     <tbody>
@@ -19,33 +20,29 @@
         <td><%= @song.release_date %></td>
       </tr>
       <tr>
-       <td><strong>Rating:</strong>
+        <td><strong>Rating:</strong></td>
         <td><%= @song.rating %></td>
-      </td> 
-    </tr>
-    <tr>
-      <td><strong>User:</strong></td>
-      <td><%= @song.user_id %></td>
-    </tr>
-  </tbody>
-</table>
+      </tr> 
+      <tr>
+        <td><strong>User:</strong></td>
+        <td><%= @song.user_id %></td>
+      </tr>
+      <tr>
+        <td><strong>Song file:</strong>
+        <td>
+      </tr>
+      <tr>
+        <td>
+          <audio controls><source src="<%= @song.file.url %>" type="audio/ogg"></audio>
+        </td>
+      </tr>
+      <tr>
+        <td><%= link_to"Write a Review", new_song_review_path(@song) %><td> 
+      </tr>
+      <tr>
+        <td><%= link_to 'Edit', edit_song_path(@song) %><td> 
+        <td><%= link_to 'Back', songs_path %></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<tr><td><strong>Song file:</strong><td></tr>
-<audio controls>
-  <source src="<%= @song.file.url %>" type="audio/ogg">
-  </audio>
- <tr>
- <td><%= link_to"Write a Review", new_song_review_path(@song) %><td> 
-
-  <td><%= link_to 'Edit', edit_song_path(@song) %><td> 
-  <td><%= link_to 'Back', songs_path %></td>
-  </tr>
-  
-<!-- <p>
-  <strong>Song image:</strong>
-  <%= @song.image %>
-</p> -->
-
-
-
-
