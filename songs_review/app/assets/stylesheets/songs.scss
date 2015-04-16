@@ -2,14 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .song-image{
-  width: 225px;
-  height: 293px;
+  width: 245px;
+  height: 393px;
 }
 .image {
   width: 225;
   height: 293;
 }
 
+
 // .table{
 //   background-color: black;
 // }
+
+.image-show img {
+  border-radius: 500px;
+}
+
+.image-show-center { 
+  text-align: center;
+}

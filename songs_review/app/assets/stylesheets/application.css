@@ -16,9 +16,18 @@
 
  */
 
-body {
-  background-image:
-}
+ body {
+  background: white;
+  background-image: url(http://pelfusion.com/media/wp-content/uploads/2010/06/musical_rain_wallpapers-wide.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+ }
+
+/*body {
+  background-color: #552132;
+  
+}*/
 
 #container {
     height:400px;

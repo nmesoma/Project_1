@@ -1,7 +1,6 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<p>
-  
-  <%= link_to image_tag(@song.image.thumb.url), @song.image.url %>
+<p class="image-show-center">
+  <%= link_to image_tag(@song.image.detail.url), @song.image.url, class: "image-show" %>
 </p>
 
 <div class="table-responsive">
