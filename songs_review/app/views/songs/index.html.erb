@@ -1,39 +1,33 @@
+<ul class="example-orbit" data-orbit data-options="bullets:false;">
+  <li>
+    <%= image_tag("andromeda-orbit.jpg") %>
+  </li>
+  <li>
+    <%= image_tag("satelite-orbit (1)foundation.jpg") %>
+    <div class="orbit-caption">
+    </div>
+  </li>
+  <li class="active">
+    <%= image_tag("andromeda-orbit.jpg") %>
+    <div class="orbit-caption">
+    </div>
+  </li>
+  <li>
+    <%= image_tag("launch-orbit (1)foundation2.jpg") %>
+    <div class="orbit-caption">
+    </div>
+  </li>
+</ul>
+
+
 <div class="row">
-
-  <%= search_form_for @search do |f| %>
-    <div class="field">
-      <%= f.label :artist_name_cont  %>
-      <%= f.text_field :artist_name_cont %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Search" %>
-    </div>
-  <% end %>
-
-<!-- the search code finished here -->
-  <ul class="example-orbit" data-orbit>
-    <li>
-      <%= image_tag("andromeda-orbit.jpg") %>
-    </li>
-    <li>
-      <%= image_tag("satelite-orbit (1)foundation.jpg") %>
-      <div class="orbit-caption"></div>
-    </li>
-    <li class="active">
-      <%= image_tag("andromeda-orbit.jpg") %>
-      <div class="orbit-caption">
+  <% @songs.each_with_index do |song, index| %>
+    <% if index%4 == 0 %>
       </div>
-    </li>
-    <li>
-      <%= image_tag("launch-orbit (1)foundation2.jpg") %>
-      <div class="orbit-caption">
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="container">
-  <% @songs.each do |song| %>   
-    <%= link_to image_tag(song.image, class: "song-image"), song %>
+      <div class="row">
+    <% end %>   
+    <div class="large-3 columns">
+      <%= link_to image_tag(song.image, class: "song-image"), song %>
+    </div>
   <% end %>
 </div>
