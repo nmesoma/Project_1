@@ -1,19 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-
-<div class="container">
-
-  <% @songs.each do |song| %>
-   
-      <a><%= link_to image_tag(song.image, class: "song-image"), song %></a>
-     
-     
-  <% end %>
+<div class="row">
+  <ul class="example-orbit" data-orbit>
+    <li>
+      <%= image_tag("andromeda-orbit.jpg") %>
+    </li>
+    <li>
+      <%= image_tag("musicimage.jpg") %>
+      <div class="orbit-caption"></div>
+    </li>
+    <li class="active">
+      <%= image_tag("andromeda-orbit.jpg") %>
+      <div class="orbit-caption">
+      </div>
+    </li>
+    <li>
+      <%= image_tag("andromeda-orbit.jpg") %>
+      <div class="orbit-caption">
+      </div>
+    </li>
+  </ul>
 </div>
 
-    
-  
-
-<%= link_to 'New Song', new_song_path %>
-
-
+<div class="container">
+  <% @songs.each do |song| %>   
+    <%= link_to image_tag(song.image, class: "song-image"), song %>
+  <% end %>
+</div>

@@ -44,7 +44,8 @@ class SongsController < ApplicationController
   def update
     respond_to do |format|
       if @song.update(song_params)
-        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
+        # was successfully updated should be here after at song
+        format.html { redirect_to @song }
         format.json { render :show, status: :ok, location: @song }
       else
         format.html { render :edit }
@@ -58,7 +59,8 @@ class SongsController < ApplicationController
   def destroy
     @song.destroy
     respond_to do |format|
-      format.html { redirect_to songs_url, notice: 'Song was successfully destroyed.' }
+      # was successfully updated should be here after url
+      format.html { redirect_to songs_url }
       format.json { head :no_content }
     end
   end
@@ -75,6 +77,6 @@ def song_params
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:title, :file, :image, :description, :release_date, :rating, :user_id)
+      params.require(:song).permit(:title, :file, :image, :description, :release_date, :rating, :user_id, :artist_name)
     end
 end

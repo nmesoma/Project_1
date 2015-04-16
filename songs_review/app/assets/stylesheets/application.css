@@ -17,23 +17,22 @@
  */
 
 body {
-  background: #000;
+  background-image:
 }
-#container
-{
+
+#container {
     height:400px;
     width:400px;
     position:relative;
 }
 
-#image
-{    
+#image {    
     position:absolute;
     left:0;
     top:0;
 }
-#text
-{
+
+#text {
     z-index:100;
     position:absolute;    
     color:white;
@@ -61,4 +60,8 @@ ul#menu{
 ul#menu li{
   float: left;
   width: 20%;
+}
+
+table {
+  width: 100%;
 }

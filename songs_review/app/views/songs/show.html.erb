@@ -1,6 +1,6 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <p>
-  <b>Image:</b>
+  
   <%= link_to image_tag(@song.image.thumb.url), @song.image.url %>
 </p>
 
@@ -12,6 +12,10 @@
         <td><%= @song.title %></td>
       </tr>
       <tr>
+        <td><strong>Artist Name:</strong></td>
+        <td><%= @song.artist_name %></td>
+      </tr>
+      <tr>
         <td><strong>Description:</strong></td>
         <td><%= @song.description %></td>
       </tr>
@@ -20,16 +24,11 @@
         <td><%= @song.release_date %></td>
       </tr>
       <tr>
-        <td><strong>Rating:</strong></td>
-        <td><%= @song.rating %></td>
-      </tr> 
-      <tr>
         <td><strong>User:</strong></td>
         <td><%= @song.user_id %></td>
       </tr>
       <tr>
-        <td><strong>Song file:</strong>
-        <td>
+        <td><strong>Play Song:</strong>
       </tr>
       <tr>
         <td>
@@ -37,21 +36,37 @@
         </td>
       </tr>
       <tr>
+        <td><%= link_to 'Edit', edit_song_path(@song) %></td> 
+        <td><%= link_to 'Back', songs_path %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table class="table">
+    <tbody>
+      <tr>
         <td><%= link_to"Write a Review", new_song_review_path(@song) %><td> 
       </tr>
-      <div class="row">
-   <tr>
-
-      <% if @song.blank? %>
-      <td><h3> No reviews just yet, Be the first to a review </h3></td>
-     <% end %>
-
-      <% @song.reviews.each do |review|%>
-        <tr><td><%= review.rating %></td></tr>
-        <tr><td><%= review.comment %></td></tr>
+      <% if @song.reviews.blank? %>
+        <tr colspan="2">
+          <td><h3> No reviews just yet, Be the first to a review </h3></td>
+        </tr>
+      <% else %>
+        <% @song.reviews.each do |review|%>
+          <tr>
+            <td><strong>Rating:</strong></td>
+            <td><%= review.rating %></td>
+          </tr>
+          <tr>
+            <td><strong>Comment:</strong></td>
+            <td><%= review.comment %></td>
+          </tr>
+        <% end %>
       <% end %>
       <tr>
-        <td><%= link_to 'Edit', edit_song_path(@song) %><td> 
+        <td><%= link_to 'Edit', edit_song_path(@song) %></td> 
         <td><%= link_to 'Back', songs_path %></td>
       </tr>
     </tbody>
