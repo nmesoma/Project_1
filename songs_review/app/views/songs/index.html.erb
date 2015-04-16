@@ -1,4 +1,16 @@
 <div class="row">
+
+  <%= search_form_for @search do |f| %>
+    <div class="field">
+      <%= f.label :artist_name_cont  %>
+      <%= f.text_field :artist_name_cont %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Search" %>
+    </div>
+  <% end %>
+
+<!-- the search code finished here -->
   <ul class="example-orbit" data-orbit>
     <li>
       <%= image_tag("andromeda-orbit.jpg") %>
