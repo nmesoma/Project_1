@@ -56,8 +56,7 @@
         <% @song.reviews.each do |review|%>
           <tr>
             <td><strong>Rating:</strong></td>
-            <td><%= review.rating %></td>
-          </tr>
+            <!-- <div class="star-rating" data-score= <%= review.rating %> ></div>  </tr> -->
           <tr>
             <td><strong>Comment:</strong></td>
             <td><%= review.comment %></td>
@@ -65,8 +64,19 @@
         <% end %>
       <% end %>
       <tr>
-        <td><%= link_to 'Edit', edit_song_path(@song) %></td> 
+        <td><%= link_to 'Edit', edit_song_path(@song) %></td>    
         <td><%= link_to 'Back', songs_path %></td>
+        
+        <script>
+            $('.star-rating').raty({
+              path: '/assets',
+              readOnly: true,
+              score: function() {
+                return $(this).attr('data-score');
+              }
+            });
+        </script>
+
       </tr>
     </tbody>
   </table>
